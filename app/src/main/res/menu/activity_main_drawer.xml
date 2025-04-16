@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:id="@+id/group_main1">
+        <item
+            android:id="@+id/nav_web"
+            android:icon="@drawable/icon_rainbow_web"
+            android:title="@string/menu_web" />
+    </group>
+    <group android:id="@+id/group_main2">
+        <item
+            android:id="@+id/nav_table_all"
+            android:icon="@drawable/icon_rainbow_okikisen"
+            android:title="@string/menu_table_all" />
+    </group>
+    <group android:id="@+id/group_main3">
+        <item
+            android:id="@+id/nav_table_dozen"
+            android:icon="@drawable/icon_rainbow_islands"
+            android:title="@string/menu_table_dozen" />
+    </group>
+    <group android:id="@+id/group_main4">
+        <item
+            android:id="@+id/nav_guide"
+            android:icon="@drawable/icon_rainbow_guide"
+            android:title="@string/menu_guide" />
+    </group>
+    <group android:id="@+id/group_other">
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/icon_rainbow_settings"
+            android:title="@string/menu_setting" />
+        <item
+            android:id="@+id/nav_menseki"
+            android:icon="@drawable/icon_rainbow_pen"
+            android:title="@string/menu_menseki" />
+    </group>
+
+</menu>

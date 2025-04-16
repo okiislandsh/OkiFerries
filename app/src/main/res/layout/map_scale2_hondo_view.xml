@@ -1,0 +1,96 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="500dp"
+    android:layout_height="500dp"
+    android:layout_gravity="center_horizontal"
+    tools:context="jp.okiislandsh.oki.schedule.ui.guide.MapScale2HondoView">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/map_scale2_hondo" />
+
+    <FrameLayout
+        android:id="@+id/eventAreaSea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/containerLabels"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="10dp"
+            android:text="@string/map_title_scale2_Hondo"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textYonago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="270dp"
+            android:layout_marginTop="420dp"
+            android:gravity="center"
+            android:padding="30dp"
+            android:text="@string/map_label_scale2_yonago"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textIzumo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="420dp"
+            android:gravity="left|center_vertical"
+            android:paddingStart="60dp"
+            android:paddingTop="30dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="30dp"
+            android:text="@string/map_label_scale2_izumo"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textShichirui"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="250dp"
+            android:gravity="right|center_vertical"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="50dp"
+            android:text="@string/map_label_scale2_shichirui"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textSakaiminato"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="320dp"
+            android:gravity="left|center_vertical"
+            android:paddingStart="50dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/map_label_scale2_sakaiminato"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+
+</FrameLayout>

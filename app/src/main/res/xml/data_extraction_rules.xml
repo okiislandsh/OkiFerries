@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- 参考 https://developer.android.com/guide/topics/data/autobackup?hl=ja -->
+        <!-- Exclude the shared preferences file that contains the GCM registrationId -->
+    </cloud-backup>
+</data-extraction-rules>

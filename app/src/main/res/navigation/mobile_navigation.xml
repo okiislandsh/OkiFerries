@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_web">
+
+    <fragment
+        android:id="@+id/nav_web"
+        android:name="jp.okiislandsh.oki.schedule.ui.web.WebFragment"
+        android:label="@string/menu_web"
+        tools:layout="@layout/fragment_web" >
+        <action
+            android:id="@+id/action_nav_web_to_nav_table_all"
+            app:destination="@id/nav_table_all" />
+        <action
+            android:id="@+id/action_nav_web_to_nav_table_dozen"
+            app:destination="@id/nav_table_dozen" />
+        <action
+            android:id="@+id/action_nav_web_to_nav_guide"
+            app:destination="@id/nav_guide" />
+        <action
+            android:id="@+id/action_nav_web_to_nav_setting"
+            app:destination="@id/nav_setting" />
+        <action
+            android:id="@+id/action_nav_web_to_nav_menseki"
+            app:destination="@id/nav_menseki" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_table_all"
+        android:name="jp.okiislandsh.oki.schedule.ui.tableall.TableAllFragment"
+        android:label="@string/menu_table_all"
+        tools:layout="@layout/fragment_table_all" />
+
+    <fragment
+        android:id="@+id/nav_table_dozen"
+        android:name="jp.okiislandsh.oki.schedule.ui.tabledozen.TableDozenFragment"
+        android:label="@string/menu_table_dozen"
+        tools:layout="@layout/fragment_table_dozen" />
+
+    <fragment
+        android:id="@+id/nav_guide"
+        android:name="jp.okiislandsh.oki.schedule.ui.guide.GuideFragment"
+        android:label="@string/menu_guide" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="jp.okiislandsh.oki.schedule.ui.setting.SettingFragment"
+        android:label="@string/menu_setting" />
+
+    <fragment
+        android:id="@+id/nav_menseki"
+        android:name="jp.okiislandsh.oki.schedule.ui.menseki.MensekiFragment"
+        android:label="@string/menu_menseki"
+        tools:layout="@layout/fragment_menseki" />
+
+</navigation>

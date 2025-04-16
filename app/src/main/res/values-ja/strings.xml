@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">隠岐航路時刻表[gh]</string>
+    <string name="menu_guide">乗船ガイド</string>
+    <string name="menu_table_all">時刻表</string>
+    <string name="menu_table_dozen">島前内航船 時刻表</string>
+    <string name="menu_web">運航情報</string>
+    <string name="button_naikosen">内航船</string>
+    <string name="button_okikisen">隠岐汽船</string>
+    <string name="button_kankokyokai">隠岐観光協会</string>
+    <string name="button_honshu">本州 隠岐</string>
+    <string name="button_bon">お盆</string>
+    <string name="button_rainbow">レインボー</string>
+    <string name="button_dozen">どうぜん</string>
+    <string name="button_isokaze">いそかぜ</string>
+    <string name="button_port_ama">海士</string>
+    <string name="button_port_chibu">知夫</string>
+    <string name="button_port_dogo">島後</string>
+    <string name="button_port_nishinoshima">西ノ島</string>
+    <string name="button_port_sakai">境港</string>
+    <string name="button_port_shichirui">七類</string>
+    <string name="button_winter">厳冬</string>
+    <string name="button_date_today">今日の時刻表</string>
+    <string name="error_no_data">発着データがありません。</string>
+    <string name="menu_other">その他</string>
+    <string name="menu_setting">設定</string>
+    <string name="button_car">車両</string>
+    <string name="label_departure">出発</string>
+    <string name="label_arrive">到着</string>
+    <string name="label_dtt_keiyu">経由</string>
+    <string name="label_dtt_dep_time">時刻</string>
+    <string name="label_dtt_dep_port">出発港</string>
+    <string name="label_dtt_ship">船名</string>
+    <string name="label_dtt_arr_port">到着港</string>
+    <string name="label_dtt_arr_time">時刻</string>
+    <string name="label_dtt_title">今日の内航船時刻表</string>
+    <string name="button_license">ライセンス</string>
+    <string name="button_privacy_policy">プライバシーポリシー</string>
+    <string name="button_release_note">リリースノート</string>
+    <string name="preference_theme_title">時刻表のテーマ</string>
+    <string name="preference_text_size_title">時刻表の文字の大きさ</string>
+    <string name="button_guide_naikousen">内航船ガイド</string>
+    <string name="button_guide_okikisen">隠岐汽船ガイド</string>
+    <string name="button_map">地図</string>
+
+    <string name="map_title_scale1">[隠岐諸島 - 本州]</string>
+    <string name="map_title_scale2_oki">[隠岐諸島]</string>
+    <string name="map_title_scale2_Hondo">[本州]</string>
+
+    <string name="map_label_scale2_chibu">知夫村・来居港\n(知夫里島、ちぶり、くりい)</string>
+    <string name="map_label_scale2_ama">海士町・菱浦港\n(中ノ島、あま)</string>
+    <string name="map_label_scale2_nishinoshima">西ノ島町・別府港\n(西ノ島)</string>
+    <string name="map_label_scale2_shichirui">島根県松江市\n七類港</string>
+    <string name="map_label_scale2_sakaiminato">鳥取県境港市\n境港</string>
+    <string name="map_label_scale2_dogo">隠岐の島町・西郷港、隠岐空港\n(島後、どうご)</string>
+    <string name="map_label_scale2_izumo">出雲空港</string>
+    <string name="map_label_scale2_yonago">米子空港</string>
+    <string name="guide_okikisen_title">隠岐汽船 乗船ガイド\n(2019/4まとめ)</string>
+    <string name="guide_okikisen_1">[予約]\n\"フェリーおき\"、\"くにが\"、\"しらしま\"は特2等以上の座席と車両航送について電話予約ができます。満席となることはありませんが、混雑のピーク時には2時間立ちっぱなしもありえます。車両航送は満車になることがあります。\n\"レインボージェット\"は電話またはインターネット予約が可能です。\n\"レインボージェット\"は出来るだけ事前予約をしましょう。土日祝祭日は通年満席です。</string>
+    <string name="guide_okikisen_2">[運航状況] 当日朝6:30ごろ\n強風、高波時は運航ダイヤの変更や欠航となる場合があります。冬の日本海は波の高い日が多いです。\n必ず公式ホームページで運航状況をチェックしましょう。\n特に\"レインボージェット\"はフェリーと比較して欠航率が高く、たとえ晴天無風でも安心できません。機関故障による欠航はよくある事です。</string>
+    <string name="guide_okikisen_3">[境港・七類アクセス] 出航30分前まで、車両を載せる場合1時間前まで\n境港と七類港は離れているため間違わないように。\n境港の駐車場は小さいため鬼太郎電車など公共の交通機関で訪れるのが便利。駐車する際は窓口で許可証を貰うこと。\n七類港の駐車場は広いものの夏季は満車に近いので、米子・松江・境港からの連絡バスの利用がおすすめ。\nお盆の時期は例年臨時駐車場が設けられるので、事前によく調べましょう。</string>
+    <string name="guide_okikisen_4">[乗船手続き]\n乗船用紙に必要事項を記入し窓口できっぷを購入します。\n車両航送の場合、窓口で車検証が必要です。あらかじめ準備しておきましょう。\n予約している場合は窓口でその旨伝えます。</string>
+    <string name="guide_okikisen_5">[待ち時間の過ごし方]\nきっぷを購入したら乗船開始時刻まで自由です。周辺の散策や土産店を見て回るのもいいです。航行中は喉が渇くので飲み物を買っておくのもいいでしょう。</string>
+    <string name="guide_okikisen_6">[乗船開始]出航15分前\nフェリーの客室は雑魚寝(混雑時は体育座り)です。壁際などいい位置は早い者勝ちなので連絡通路には行列ができます。\n客室がいっぱいになると、船内通路にゴザを敷きそこに座ることもあります。ゴザは船員から無料で借りることができます。\nレインボージェットの客室は座席のみで、全席自由席です。2階の窓際の座席からは良い景色が見れます。</string>
+    <string name="guide_okikisen_7">[船内の過ごし方]\nフェリーでは30円で毛布を借りることができます。枕は無料です。海況が穏やかであればデッキへ出て潮風を浴びるのもいいでしょう。波の高い日は早々に寝るのがオススメです。さもなくばトイレで2時間過ごすことになります。\nレインボージェットは航行中シートベルト着用で、船内に見て回る場所もないため、到着まで座席で過ごすことになります。</string>
+    <string name="guide_okikisen_8">よい旅を!</string>
+    <string name="guide_naikousen_title">島前内航船 乗船ガイド\n(2019/4まとめ)</string>
+    <string name="guide_naikousen_1">[予約]\n予約はできません。\n満席となることはなく、定員の少ない\"いそかぜ\"であっても乗客の多いときは2隻で定刻運航を行います。\"どうぜん\"の車両航送は満車になることがあります。</string>
+    <string name="guide_naikousen_2">"[運航状況] 当日随時\n強風、高波時は運航ダイヤの変更や欠航となる場合があります。西風の強い日は知夫・来居便の欠航率が高いです。\n観光協会などのホームページで運航状況をチェックしましょう。\n運航ダイヤに変更がある場合、知夫村、海士町、西ノ島町では町内放送が流れます。 "</string>
+    <string name="guide_naikousen_3">[アクセス] 出航10分前まで\n別府港は\"どうぜん\"と\"いそかぜ\"の乗り場が離れているため間違わないように。間違えたために乗り遅れる人が結構います。\n車両航送は先着順なので、混雑時は早めに向かいましょう。</string>
+    <string name="guide_naikousen_4">[乗船手続き]\n券売機できっぷを購入します。きっぷを買わず船内で現金支払いも可能です。知夫・来居港は券売機も窓口もないため、船内払いのみです。\n車両航送の場合、窓口で手続きをします。その際、車の長さを聞かれます。\"どうぜん\"の始発便(海士・菱浦港発)と最終便(西ノ島・別府港発)は窓口が閉まっているため、船員に現金で支払います。知夫・来居港発は窓口がないため、船内払いのみです。</string>
+    <string name="guide_naikousen_5">[待ち時間の過ごし方]\n岸壁から海を眺めるだけで非日常を体験できるでしょう。</string>
+    <string name="guide_naikousen_6">[乗船開始]出航3～10分前\n通常乗船案内はありません。皆が船に乗り始めたら一緒に乗りましょう。\n座席は自由です。好きなところへ座りましょう。</string>
+    <string name="guide_naikousen_7">[船内の過ごし方]\n天気の良い日はデッキへ出て潮風を浴びるのもいいでしょう。年に一回程度、航行中にイルカが見えることもあります。</string>
+    <string name="guide_naikousen_8">さあ次の島が見えてきました！</string>
+    <string name="menu_menseki">免責</string>
+    <string name="menseki">このアプリを利用する場合、以下の免責事項へ同意したものとします。\n同意できない場合、直ちにアンインストールしてください。\n\n●このアプリの利用により、何らかのトラブル、損失、損害等が発生しても、開発者は一切の責任を負いません。\n\n●情報の正確性について、開発者は一切の保証を致しません。当アプリによらない方法で公式情報をご確認ください。</string>
+
+    <string name="option_menu_change_date">日付変更</string>
+    <string name="option_menu_url">URL編集</string>
+    <string name="option_menu_share_to_browser">ブラウザで開く</string>
+    <string name="option_menu_ex_filter">Exフィルタ</string>
+    <string name="option_menu_font_plus">大きく</string>
+    <string name="option_menu_font_minus">小さく</string>
+    <string name="option_menu_notification">アプリお知らせ</string>
+
+</resources>

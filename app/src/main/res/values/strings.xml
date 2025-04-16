@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Oki Ferries[gh]</string>
+
+    <string name="menu_web">Ferries Operation Info, etc.</string>
+    <string name="menu_table_all">Ferries TimeTable.</string>
+    <string name="menu_table_dozen">Dozen Inter-Islands Ferry Timetable.</string>
+    <string name="menu_guide">How to</string>
+    <string name="menu_setting">Setting</string>
+    <string name="menu_other">Other</string>
+    <string name="menu_menseki">Disclaimer</string>
+
+    <string name="option_menu_notification">AppNotification</string>
+
+    <string name="option_menu_url">Edit URL</string>
+    <string name="option_menu_share_to_browser">Share to browser</string>
+    <string name="option_menu_change_date">Change Date</string>
+    <string name="option_menu_ex_filter">Ex Filter</string>
+    <string name="option_menu_font_plus">Font Size Up</string>
+    <string name="option_menu_font_minus">Font Size Down</string>
+
+    <string name="button_okikankou" translatable="false">K</string>
+    <string name="button_naikosen">Inter-Islands Ferry</string>
+    <string name="button_okikisen">Oki-Kisen</string>
+    <string name="button_kankokyokai">Oki Tourism Association</string>
+    <string name="button_chibu" translatable="false">知</string>
+    <string name="button_ama" translatable="false">海</string>
+    <string name="button_nishinoshima" translatable="false">西</string>
+    <string name="button_dogo" translatable="false">隠</string>
+    <string name="button_honshu">Oki-Honshu</string>
+    <string name="button_bon">Bon Fest.</string>
+    <string name="button_winter">Winter</string>
+    <string name="button_rainbow">RainbowJet</string>
+    <string name="button_dozen">Ferry-Dozen</string>
+    <string name="button_isokaze">Isokaze</string>
+    <string name="button_port_chibu">Chibu</string>
+    <string name="button_port_ama">Ama</string>
+    <string name="button_port_nishinoshima">Nishinoshima</string>
+    <string name="button_port_dogo">Dogo</string>
+    <string name="button_port_shichirui">Shichirui</string>
+    <string name="button_port_sakai">Sakaiminato</string>
+    <string name="label_arrive">Arrive</string>
+    <string name="label_departure">Departure</string>
+    <string name="button_car">Vehicle</string>
+    <string name="button_date_today">Today Schedule</string>
+    <string name="error_no_data">No TimeTable Found.</string>
+    <string name="label_dtt_ship">Ship</string>
+    <string name="label_dtt_dep_port">Port</string>
+    <string name="label_dtt_dep_time">DEP.</string>
+    <string name="label_dtt_keiyu">Through</string>
+    <string name="label_dtt_arr_port">Port</string>
+    <string name="label_dtt_arr_time">ARR.</string>
+    <string name="label_dtt_title">Today SKD Inter-I.</string>
+
+    <string name="button_release_note">Release Note</string>
+    <string name="button_license">License</string>
+    <string name="button_privacy_policy">Privacy Policy</string>
+
+    <string name="button_map">Map</string>
+    <string name="button_guide_okikisen">How-To Boarding a Oki-Kisen Ferry</string>
+    <string name="button_guide_naikousen">How-To Boarding a Inter-Islands Ferry</string>
+
+    <string name="map_title_scale1">[Oki Islands - Honshu]</string>
+    <string name="map_title_scale2_oki">[Oki Islands]</string>
+    <string name="map_title_scale2_Hondo">[Honshu Ports]</string>
+
+    <string name="map_label_scale2_chibu">Chibu village Kurii port\n(Chiburi Island)</string>
+    <string name="map_label_scale2_ama">Ama town Hishiura port\n(Nakanoshima Island)</string>
+    <string name="map_label_scale2_nishinoshima">Nishinoshima town Beppu port\n(Nishinoshima Island)</string>
+    <string name="map_label_scale2_shichirui">Matsue City, Shimane Pref.\nShichirui port</string>
+    <string name="map_label_scale2_sakaiminato">Sakaiminato City, Tottori Pref.\nSakai port</string>
+    <string name="map_label_scale2_dogo">Okinoshima town Saigo port and Oki airport(Dogo-Island)</string>
+    <string name="map_label_scale2_izumo">Izumo airport</string>
+    <string name="map_label_scale2_yonago">Yonago airport</string>
+
+    <string name="preference_text_size_title">Time Table Text Size</string>
+    <string name="preference_theme_title">Time Table Color Theme</string>
+
+    <string name="menseki">IF YOU USE THIS APP,\nYOU AGREE TO THE FOLLOWING DISCLAIMER.\nIF YOU DO NOT AGREE, UNINSTALL IT IMMEDIATELY.\n\nFOR THE USE OF THIS APP,\nIN THE EVENT OF TROUBLE, LOSS, DAMAGE, ETC.,\nDEVELOPERS ARE NOT RESPONSIBLE.\n\nFOR INFORMATION ACCURACY, SEE\nTHE DEVELOPER DOES NOT MAKE ANY GUARANTEES.\nCHECK THE OFFICIAL INFORMATION IN A WAY THAT IS\nINDEPENDENT OF THIS APP.</string>
+</resources>
