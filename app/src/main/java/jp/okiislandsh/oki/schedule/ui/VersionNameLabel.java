@@ -8,13 +8,11 @@ import android.util.AttributeSet;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import jp.okiislandsh.library.android.view.live.LifecycleTextViewBase;
 import jp.okiislandsh.oki.schedule.BuildConfig;
-import jp.okiislandsh.oki.schedule.util.TimeTableData;
 import jp.okiislandsh.oki.schedule.util.TimeTableDownloadTaskManager;
 
 /** ドロワーのヘッダにバージョン名を出したい */
