@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="url_okikisen" translatable="false">https://www.oki-kisen.co.jp/situation/</string>
+    <string name="url_naikosen_status" translatable="false">https://ship.nkk-oki.com/status</string>
+    <string name="url_okikankou" translatable="false">https://www.okikankou.com/inter-island-ferry/</string>
+    <string name="url_kankokyokai" translatable="false">https://www.e-oki.net/</string>
+    <string name="url_translation" translatable="false">https://translate.weblio.jp/web/english?sentenceStyle=spoken&amp;url=%s</string>
+    <string name="url_weather" translatable="false">https://www.jma.go.jp/bosai/forecast/#area_type=class20s&amp;area_code=3252800</string>
+    <string name="url_chibu" translatable="false">https://search.yahoo.co.jp/realtime/search?p=知夫村</string>
+    <string name="url_ama" translatable="false">https://search.yahoo.co.jp/realtime/search?p=海士町</string>
+    <string name="url_nishinoshima" translatable="false">https://search.yahoo.co.jp/realtime/search?p=西ノ島町</string>
+    <string name="url_dogo" translatable="false">https://search.yahoo.co.jp/realtime/search?p=隠岐の島町</string>
+
+    <string name="url_privacy_policy" translatable="false">https://sites.google.com/view/oki-ferries-privacy-policy</string>
+    <string name="url_license" translatable="false">https://sites.google.com/view/oki-ferries-privacy-policy/license</string>
+    <string name="url_release_note" translatable="false">https://sites.google.com/view/shima-app-release-note</string>
+    <string name="url_release_note_en" translatable="false">https://sites.google.com/view/shima-app-release-note/english</string>
+
+    <string name="url_github_asset" translatable="false">https://github.com/okiislandsh/OKISchedule/tree/master/app/src/main/assets/%1$s</string>
+</resources>

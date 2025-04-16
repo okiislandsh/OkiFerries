@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6600cc</color>
+    <color name="colorPrimaryDark">#440088</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="colorSilver">#ddd</color>
+    <color name="colorGray">#666</color>
+    <color name="colorBlack">#000</color>
+    <color name="timeTableButtonBack">@color/colorWhite</color>
+    <color name="timeTableButtonText">@color/colorBlack</color>
+    <color name="timeTableButtonActiveBack">@color/colorPrimary</color>
+    <color name="timeTableButtonActiveText">@color/colorWhite</color>
+</resources>

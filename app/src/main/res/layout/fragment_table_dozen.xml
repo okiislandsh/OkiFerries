@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSilver">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toTopOf="@id/dragAndPinchLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="2dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnTitle"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNishinoshimaDep"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:autoSizeTextType="uniform"
+            android:background="#FFF"
+            android:includeFontPadding="false"
+            android:padding="2dp"
+            android:text="@string/button_port_nishinoshima"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="9sp"
+            app:layout_constraintBottom_toTopOf="@id/btnChibuDep"
+            app:layout_constraintEnd_toStartOf="@id/labelDeparture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnChibuDep"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:autoSizeTextType="uniform"
+            android:background="#FFF"
+            android:includeFontPadding="false"
+            android:padding="2dp"
+            android:text="@string/button_port_chibu"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnAmaDep"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnNishinoshimaDep" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelDeparture"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/label_departure"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="9sp"
+            app:layout_constraintBottom_toTopOf="@id/btnAmaDep"
+            app:layout_constraintEnd_toStartOf="@id/btnTitle"
+            app:layout_constraintStart_toEndOf="@id/btnNishinoshimaDep"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAmaDep"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:autoSizeTextType="uniform"
+            android:background="#FFF"
+            android:includeFontPadding="false"
+            android:padding="2dp"
+            android:text="@string/button_port_ama"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnCar"
+            app:layout_constraintStart_toEndOf="@id/btnChibuDep"
+            app:layout_constraintTop_toBottomOf="@id/labelDeparture" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="2dp"
+            android:text="@string/label_dtt_title"
+            android:background="@color/timeTableButtonActiveBack"
+            android:textColor="@color/timeTableButtonActiveText"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="9sp"
+            app:layout_constraintBottom_toTopOf="@id/btnCar"
+            app:layout_constraintEnd_toStartOf="@id/labelArrive"
+            app:layout_constraintStart_toEndOf="@id/labelDeparture"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:background="#FFF"
+            android:includeFontPadding="false"
+            android:padding="2dp"
+            android:text="@string/button_car"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnAmaArr"
+            app:layout_constraintStart_toEndOf="@id/btnAmaDep"
+            app:layout_constraintTop_toBottomOf="@id/btnTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelArrive"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/label_arrive"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="9sp"
+            app:layout_constraintBottom_toTopOf="@id/btnAmaArr"
+            app:layout_constraintEnd_toStartOf="@id/btnNishinoshimaArr"
+            app:layout_constraintStart_toEndOf="@id/btnTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAmaArr"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:autoSizeTextType="uniform"
+            android:background="#FFF"
+            android:includeFontPadding="false"
+            android:padding="2dp"
+            android:text="@string/button_port_ama"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnChibuArr"
+            app:layout_constraintStart_toEndOf="@id/btnCar"
+            app:layout_constraintTop_toBottomOf="@id/labelArrive" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNishinoshimaArr"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:autoSizeTextType="uniform"
+            android:background="#FFF"
+            android:includeFontPadding="false"
+            android:padding="2dp"
+            android:text="@string/button_port_nishinoshima"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="9sp"
+            app:layout_constraintBottom_toTopOf="@id/btnChibuArr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/labelArrive"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnChibuArr"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:autoSizeTextType="uniform"
+            android:background="#FFF"
+            android:includeFontPadding="false"
+            android:padding="2dp"
+            android:text="@string/button_port_chibu"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnAmaArr"
+            app:layout_constraintTop_toBottomOf="@id/btnNishinoshimaArr" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <jp.okiislandsh.oki.schedule.ui.tabledozen.MyDragAndPinchLayout
+        android:id="@+id/dragAndPinchLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonContainer">
+
+        <LinearLayout
+            android:id="@+id/ttContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </jp.okiislandsh.oki.schedule.ui.tabledozen.MyDragAndPinchLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
