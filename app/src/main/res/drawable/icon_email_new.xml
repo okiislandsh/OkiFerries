@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- 封筒アイコン（中央に余白を作るために縮小） -->
+    <group
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:translateX="3.6"
+        android:translateY="3.6">
+
+        <!-- 封筒の外枠 -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="2"
+            android:strokeLineJoin="round"
+            android:strokeLineCap="round"
+            android:pathData="M4,4h16c1.1,0 2,0.9 2,2v12c0,1.1 -0.9,2 -2,2H4c-1.1,0 -2,-0.9 -2,-2V6c0,-1.1 0.9,-2 2,-2z" />
+
+        <!-- 封筒のフラップ -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="2"
+            android:strokeLineJoin="round"
+            android:strokeLineCap="round"
+            android:pathData="M22,6l-10,7L2,6" />
+    </group>
+
+    <!-- バット型（全体的に大きく） -->
+    <path
+        android:fillColor="#FF3B30"
+        android:pathData="
+            M17.5,1.9
+            C16.6,1.9 15.6,2.7 15.6,3.8
+            L15.6,5.8
+            C15.6,6.9 16.6,7.7 17.5,7.7
+            C18.4,7.7 19.4,6.9 19.4,5.8
+            L19.4,3.8
+            C19.4,2.7 18.4,1.9 17.5,1.9
+            Z" />
+
+    <!-- 下の点（エクスクラメーションマーク全体のバランスを合わせて大きく） -->
+    <path
+        android:fillColor="#FF3B30"
+        android:pathData="M17.5,8.3 a1.7,1.7 0 1,0 0.01,0" />
+
+</vector>
