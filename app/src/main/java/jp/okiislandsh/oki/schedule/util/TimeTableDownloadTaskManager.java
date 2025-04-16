@@ -84,7 +84,7 @@ public class TimeTableDownloadTaskManager {
             for (int i = 0, size= naikouPortTime.size(); i < size; i++) {
                 TimeTableData.PortTime portTime = naikouPortTime.get(i);
                 final @Nullable PORT before = (0<i) ? portOfArray.get(i-1) : null;
-                final @Nullable PORT current = portOfArray.get(i);;
+                final @Nullable PORT current = portOfArray.get(i);
                 final @Nullable PORT after = i<(size-1) ? portOfArray.get(i+1) : null;
                 if(current==null) { //本土にいるため発着をクリア
                     naikouPortTime.set(i, new TimeTableData.PortTime(parts.portTimes.get(i).port)); //港名は元のテキストを使う
