@@ -261,21 +261,16 @@ public class WebFragment extends AbsBaseFragment {
                         final @NonNull MenuItem item = menu.add(0, R.string.option_menu_notification, 0, R.string.option_menu_notification);
                         item.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
                         //Menuに必要に応じてバッジをつける
+                        final @Nullable Long readNumber = vm.mLastReadMessageNumber.getValue();
+                        final boolean newMark = (readNumber==null || readNumber < msg.number);
                         final @NonNull LinearLayout container = newLinearLayout(HORIZONTAL, newParamsWW());
                         container.setOnClickListener(v->onMenuItemSelected(item));
                         final @NonNull ImageView imgIcon = new ImageView(requireContext());
                         final int dp48ToPx = (int)SizeUtil.dp2px(48, requireContext());
                         imgIcon.setLayoutParams(new LinearLayout.LayoutParams(dp48ToPx, dp48ToPx));
-                        imgIcon.setImageResource(R.drawable.icon_email);
+                        imgIcon.setImageResource(newMark ? R.drawable.icon_email_new : R.drawable.icon_email);
                         setPadding(imgIcon, (int)SizeUtil.dp2px(8, requireContext()));
                         container.addView(imgIcon);
-                        final @Nullable Long readNumber = vm.mLastReadMessageNumber.getValue();
-                        if(readNumber==null || readNumber < msg.number){ //未読ならバッジをつける
-                            final @NonNull TextView textView = newTextRelative("!", newParamsWW(), .5f);
-                            textView.setTextColor(Color.WHITE);
-                            textView.setBackgroundResource(R.drawable.badge_background);
-                            container.addView(textView);
-                        }
                         item.setActionView(container);
                     }
 

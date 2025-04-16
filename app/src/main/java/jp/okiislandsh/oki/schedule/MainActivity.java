@@ -98,15 +98,18 @@ public class MainActivity extends MyAppCompatActivity {
 
     /** アプリからのお知らせをダイアログ表示する */
     public void showMessagesDialog(@NonNull MessageData msgData){
-        final @NonNull SpannableStringBuilder buf = new SpannableStringBuilder();
+        final @NonNull AtomicBoolean isJa = new AtomicBoolean(isJa()); //既読ロングタップでメッセージを切り替えたい
+        final @NonNull SpannableStringBuilder bufJa = new SpannableStringBuilder();
+        final @NonNull SpannableStringBuilder bufEn = new SpannableStringBuilder();
         for(@NonNull MessageData.Parts m: msgData.messages){
             //MessageDataクラスのソートをそのまま表示に適用する
-            if(0<buf.length()) buf.append(DividerSpan.newDividerSpan()); //メッセージごとに境界線
-            buf.append(newSizeSpan(m.ymd+BR, .8f))
-                    .append(isJa(m.ja, m.en));
+            if(0<bufJa.length()) bufJa.append(DividerSpan.newDividerSpan()); //メッセージごとに境界線
+            if(0<bufEn.length()) bufEn.append(DividerSpan.newDividerSpan()); //メッセージごとに境界線
+            bufJa.append(newSizeSpan(m.ymd+BR, .8f)).append(m.ja);
+            bufEn.append(newSizeSpan(m.ymd+BR, .8f)).append(m.en);
         }
         //日付ごとに複数のメッセージがある
-        final @NonNull TextView text = newText(buf, newParamsMW(), P.TT_TEXT_SIZE.get(this).px(this));
+        final @NonNull TextView text = newText(isJa.get() ? bufJa : bufEn, newParamsMW(), P.TT_TEXT_SIZE.get(this).px(this));
         setPadding(text, 12);
         text.setAutoLinkMask(Linkify.WEB_URLS);
         text.setTextIsSelectable(true);
@@ -122,10 +125,9 @@ public class MainActivity extends MyAppCompatActivity {
         //デバッグ用message.json表示
         final @Nullable Button button = dialog.getButton(BUTTON_NEGATIVE);
         if(button!=null){
-            final @NonNull AtomicBoolean isJSON = new AtomicBoolean(false);
             button.setOnLongClickListener(v->{
-                isJSON.set(!isJSON.get());
-                text.setText(isJSON.get() ? msgData.rawJSONString : buf);
+                isJa.set(!isJa.get());
+                text.setText(isJa.get() ? bufJa : bufEn);
                 text.invalidate();
                 return true;
             });
