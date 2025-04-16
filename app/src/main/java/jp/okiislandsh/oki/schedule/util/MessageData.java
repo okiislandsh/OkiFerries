@@ -1,5 +1,7 @@
 package jp.okiislandsh.oki.schedule.util;
 
+import static jp.okiislandsh.library.android.MyUtil.BR;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -12,6 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 import jp.okiislandsh.library.android.LogDB;
+import jp.okiislandsh.library.android.MyUtil;
 import jp.okiislandsh.library.core.YMDInt;
 
 /** message/message.json */
@@ -67,6 +70,7 @@ public class MessageData {
     public final @NonNull List<Parts> messages;
 
     public MessageData(@NonNull String jsonString) throws Exception {
+        Log.d("Parse JSON"+ BR+jsonString);
         rawJSONString = jsonString;
 
         final @NonNull JSONObject json = new JSONObject(jsonString);
