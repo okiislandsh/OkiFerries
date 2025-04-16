@@ -106,7 +106,7 @@ public class MyApp extends Application {
             br.write(text);
             return true;
         } catch (Exception e) {
-            Log.e("writeTextFile", "書込み失敗", e);
+            Log.e("writeTextFile", "書込み失敗 "+file, e);
             return false;
         }
     }

@@ -111,6 +111,7 @@ public class MessageDownloadTaskManager {
                     } else {
                         if (postMsg == null || (postMsg.number < serverMsg.number)) { //ローカルの読み込みに失敗しているか、サーバの方が新しいメッセージ
                             writeInAppMsg(serverMsg);
+                            Log.d(LOG_TAG, "サーバからMessageDataを取得し、アプリ内ストレージへコピーが完了した");
                             livePopMessageData.postValue(serverMsg); //確定Post
                         } else {
                             Log.d(LOG_TAG, "サーバからMessageDataをダウンロードしたが、アプリ内の方が同じか新しい");
@@ -163,7 +164,7 @@ public class MessageDownloadTaskManager {
         Log.d(LOG_TAG, "アプリ内ストレージの"+MESSAGE_FILE_NAME+"を書込み開始。");
         final @NonNull File internalRootDir = new File(MyApp.app.getFilesDir(), INTERNAL_MESSAGE_ROOT);
         try {
-            if (!internalRootDir.mkdir()) {
+            if (!internalRootDir.exists() && !internalRootDir.mkdir()) {
                 Log.e(LOG_TAG, "アプリ内ストレージの"+internalRootDir+"のmkdirに失敗。");
                 return;
             }

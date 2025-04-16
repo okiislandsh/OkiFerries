@@ -205,6 +205,7 @@ public class TimeTableDownloadTaskManager {
                             //latest.jsonを読み込む
                             final @NonNull File latestFile = new File(current, TIME_TABLE_LATEST_FILE_NAME);
                             if (!latestFile.isFile() || !latestFile.canRead()) {
+                                Log.d(LOG_TAG, latestFile + "が読み込めない。\t" + stopWatch.lap() + "ms");
                                 continue;
                             }
                             final @Nullable String latestJsonString = MyApp.readTextFile(latestFile);
@@ -273,7 +274,7 @@ public class TimeTableDownloadTaskManager {
                             if (checkInAppTTDataComplete) {
                                 Log.d(LOG_TAG, "サーバとアプリ内ストレージの中身が一致したためサーバ同期を中止");
                             } else {
-                                Log.d(LOG_TAG, "サーバから" + Arrays.toString(serverLatest.fileList) + "をダウンロードし、アプリ内ストレージへ保存");
+                                Log.d(LOG_TAG, "サーバから" + serverLatest.number + " " + Arrays.toString(serverLatest.fileList) + "をダウンロードし、アプリ内ストレージへ保存");
                                 final @NonNull TimeTableData serverTTData = syncServerToInApp(serverLatest);
 
                                 Log.d(LOG_TAG, "全件ダウンロード保存が成功したため、LiveDataのTimeTableインスタンスを差し替える");
@@ -377,19 +378,28 @@ public class TimeTableDownloadTaskManager {
         final @NonNull File internalRootDir = FileUtil.mkDir(MyApp.app.getFilesDir(), ASSET_TIME_TABLE_ROOT);
         final @NonNull File internalNumberDir = FileUtil.mkDir(internalRootDir, String.valueOf(serverLatest.number));
 
+        //Latest保存
+        final @NonNull File internalLatestFile = new File(internalNumberDir, TIME_TABLE_LATEST_FILE_NAME);
+        Log.d(LOG_TAG, serverLatest.number+" "+ TIME_TABLE_LATEST_FILE_NAME + "をアプリ内ストレージへ保存");
+        MyApp.writeTextFile(internalLatestFile, serverLatest.rawJSONString);
+
         for (String file : serverLatest.fileList) {
             Log.d(LOG_TAG, file + "をDL");
-            final @NonNull byte[] response = MyApp.readServerAsset(ASSET_TIME_TABLE_ROOT + "/" + TIME_TABLE_LATEST_FILE_NAME);
+            final @NonNull byte[] response = MyApp.readServerAsset(ASSET_TIME_TABLE_ROOT + "/" + file);
             final @NonNull String jsonString = new String(response, StandardCharsets.UTF_8);
+            final @NonNull TimeTableData ttData = new TimeTableData(jsonString);
 
-            Log.d(LOG_TAG, file + "をTimeTableDataコレクションへ追加");
-            ret.addAll(new TimeTableData(jsonString));
+            Log.d(LOG_TAG, file + " "+ttData.size()+"件をTimeTableDataコレクションへ追加");
+            ret.addAll(ttData);
 
             Log.d(LOG_TAG, file + "をアプリ内ストレージへ保存");
             final @NonNull File internalJsonFile = new File(internalNumberDir, file);
             MyApp.writeTextFile(internalJsonFile, jsonString);
 
         }
+
+        Log.d(LOG_TAG, "全件をアプリ内ストレージへ保存成功 ttAll.size="+ret.size());
+
         return ret;
     }
 
