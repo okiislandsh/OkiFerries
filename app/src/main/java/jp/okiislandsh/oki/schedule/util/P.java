@@ -6,12 +6,10 @@ import static jp.okiislandsh.library.core.MyUtil.isJa;
 import static jp.okiislandsh.library.core.MyUtil.requireNonNull;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
@@ -21,18 +19,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import jp.okiislandsh.library.android.IContextAccess;
-import jp.okiislandsh.library.android.MyUtil;
-import jp.okiislandsh.library.android.live.NonNullLiveData;
 import jp.okiislandsh.library.android.preference.ButtonPreference;
 import jp.okiislandsh.library.android.preference.IBooleanPreference;
 import jp.okiislandsh.library.android.preference.IEnumPreference;
 import jp.okiislandsh.library.android.preference.IIntPreference;
 import jp.okiislandsh.library.android.preference.IJSONPreference;
 import jp.okiislandsh.library.android.preference.ILongPreference;
-import jp.okiislandsh.library.android.preference.LifecyclePreference;
 import jp.okiislandsh.library.android.preference.PreferenceBuilderFunction;
 import jp.okiislandsh.library.core.DateUtil;
-import jp.okiislandsh.library.core.Function;
 import jp.okiislandsh.oki.schedule.BuildConfig;
 import jp.okiislandsh.oki.schedule.MyApp;
 import jp.okiislandsh.oki.schedule.R;

@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Objects;
 
 import jp.okiislandsh.library.android.LogDB;
-import jp.okiislandsh.library.android.MyUtil;
 import jp.okiislandsh.library.core.YMDInt;
 
 /** message/message.json */
