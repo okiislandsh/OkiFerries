@@ -1,5 +1,5 @@
 {
-  "number": "20250101",
+  "number": "20250102",
   "descriptionJa": "2025年時刻表",
   "descriptionEn": "TimeTable of 2025",
   "fileList": [
@@ -9,7 +9,6 @@
     "2022All.json",
     "2023All.json",
     "2024All.json",
-    "2025All.json",
-    "2026All.json"
+    "2025All.json"
   ]
 }
