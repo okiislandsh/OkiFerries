@@ -25,6 +25,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            versionNameSuffix = '[g]'
         }
         amazonAppStoreRelease {
             minifyEnabled true
