@@ -49,7 +49,7 @@ This app is especially designed for local residents (notably Chibu, Ama, Nishino
 
 ## Installation
 
-1. Download the [`Oki Ferries 2025 Unlimited github.apk`](Oki%20Ferries%202025%20Unlimited%20github.apk).
+1. Download the [`Oki Ferries 2025 Unlimited. Reduced Services from June 2025. github.apk`](Oki%20Ferries%202025%20Unlimited.%20Reduced%20Services%20from%20June%202025.%20github.apk).
 2.  Copy the downloaded APK file to your Android device.
 3.  Open the APK file on your Android device and perform the installation.
     -   You may need to allow the installation of apps from unknown sources in your device's settings.

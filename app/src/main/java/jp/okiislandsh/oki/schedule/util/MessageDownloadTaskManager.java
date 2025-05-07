@@ -44,7 +44,7 @@ public class MessageDownloadTaskManager {
 
     private static @Nullable String parseAssetMessageJSON(){
         final @NonNull StopWatch stopWatch = new StopWatch();
-        Log.d(LOG_TAG, "Assetの時刻表latest.json読み込み開始。");
+        Log.d(LOG_TAG, "Assetのmessage.json読み込み開始。");
         try (InputStream is = MyApp.app.getAssets().open(ASSET_MESSAGE_ROOT +File.separator+ MESSAGE_FILE_NAME);
              ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
 
@@ -55,10 +55,10 @@ public class MessageDownloadTaskManager {
             }
 
             final @NonNull String jsonString = bos.toString(StandardCharsets.UTF_8.name());
-            Log.d(LOG_TAG, "Assetの時刻表latest.json読み込み完了。" + stopWatch.lap() + "ms");
+            Log.d(LOG_TAG, "Assetのmessage.json読み込み完了。" + stopWatch.lap() + "ms");
             return jsonString;
         } catch (Exception e) {
-            Log.e(LOG_TAG, "Assetの時刻表latest.json読み込みに失敗。" + stopWatch.lap() + "ms", e);
+            Log.e(LOG_TAG, "Assetのmessage.json読み込みに失敗。" + stopWatch.lap() + "ms", e);
             return null;
         }
     }
@@ -111,10 +111,10 @@ public class MessageDownloadTaskManager {
                     } else {
                         if (postMsg == null || (postMsg.number < serverMsg.number)) { //ローカルの読み込みに失敗しているか、サーバの方が新しいメッセージ
                             writeInAppMsg(serverMsg);
-                            Log.d(LOG_TAG, "サーバからMessageDataを取得し、アプリ内ストレージへコピーが完了した");
+                            Log.d(LOG_TAG, "サーバからMessageData("+serverMsg.number+")を取得し、アプリ内ストレージへコピーが完了した");
                             livePopMessageData.postValue(serverMsg); //確定Post
                         } else {
-                            Log.d(LOG_TAG, "サーバからMessageDataをダウンロードしたが、アプリ内の方が同じか新しい");
+                            Log.d(LOG_TAG, "サーバからMessageData("+serverMsg.number+")をダウンロードしたが、アプリ内の方("+postMsg.number+")が同じか新しい");
                         }
                     }
                 }
