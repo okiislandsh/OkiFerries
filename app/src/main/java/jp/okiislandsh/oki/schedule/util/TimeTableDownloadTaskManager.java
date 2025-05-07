@@ -184,7 +184,7 @@ public class TimeTableDownloadTaskManager {
                                 Log.e(LOG_TAG, "Asset("+file+")読み込み失敗。resume next。\t" + stopWatch.lap() + "ms", e2);
                             }
                         }
-                        livePopTimeTableData.postValue(new TimeTableTuple(latest, ttData));
+                        livePopTimeTableData.postValue(new TimeTableTuple(latest, ttData)); //TODO 2回以上更新処理を実行した場合、すでにLivePopulateに値が設定済み
                         livePopNaikouMixData.postValue(convertNaikouMix(ttData));
                     }catch (Exception e3){
                         Log.e(LOG_TAG, "Asset読み込み失敗。\t" + stopWatch.lap() + "ms", e3);
@@ -269,19 +269,27 @@ public class TimeTableDownloadTaskManager {
                         if (serverLatest == null) {
                             Log.w(LOG_TAG, "サーバに接続できないかTimeTableLatestDataの構築に失敗");
                         } else {
-                            Log.d(LOG_TAG, "アプリ内ストレージにダウンロード済みかどうか確認を開始");
-                            final boolean checkInAppTTDataComplete = checkInAppTTDataComplete(serverLatest);
-                            if (checkInAppTTDataComplete) {
-                                Log.d(LOG_TAG, "サーバとアプリ内ストレージの中身が一致したためサーバ同期を中止");
-                            } else {
-                                Log.d(LOG_TAG, "サーバから" + serverLatest.number + " " + Arrays.toString(serverLatest.fileList) + "をダウンロードし、アプリ内ストレージへ保存");
-                                final @NonNull TimeTableData serverTTData = syncServerToInApp(serverLatest);
+                            final @Nullable TimeTableTuple localLatest = livePopTimeTableData.getLatest();
+                            final @Nullable Long localNumber = localLatest==null ? null : localLatest.number();
+                            if(localNumber==null || (localNumber < serverLatest.number)){ //ローカルの読み込みに失敗しているか、サーバの方が新しいメッセージ
+                                Log.d(LOG_TAG, "サーバのlatest.json("+serverLatest.number+")の方が、ローカル("+localNumber+")より新しい");
+                                Log.d(LOG_TAG, "アプリ内ストレージにダウンロード済みかどうか確認を開始");
+                                final boolean checkInAppTTDataComplete = checkInAppTTDataComplete(serverLatest);
+                                if (checkInAppTTDataComplete) {
+                                    Log.d(LOG_TAG, "サーバとアプリ内ストレージの中身が一致したためサーバ同期を中止");
+                                } else {
+                                    Log.d(LOG_TAG, "サーバから" + serverLatest.number + " " + Arrays.toString(serverLatest.fileList) + "をダウンロードし、アプリ内ストレージへ保存");
+                                    final @NonNull TimeTableData serverTTData = syncServerToInApp(serverLatest);
 
-                                Log.d(LOG_TAG, "全件ダウンロード保存が成功したため、LiveDataのTimeTableインスタンスを差し替える");
-                                livePopTimeTableData.postValue(new TimeTableTuple(serverLatest, serverTTData));
-                                livePopNaikouMixData.postValue(convertNaikouMix(serverTTData));
+                                    Log.d(LOG_TAG, "全件ダウンロード保存が成功したため、LiveDataのTimeTableインスタンスを差し替える");
+                                    livePopTimeTableData.postValue(new TimeTableTuple(serverLatest, serverTTData));
+                                    livePopNaikouMixData.postValue(convertNaikouMix(serverTTData));
 
-                                Log.d(LOG_TAG, "サーバとの同期に成功");
+                                    Log.d(LOG_TAG, "サーバとの同期に成功");
+                                }
+                            }else{
+                                Log.d(LOG_TAG, "サーバからlatest.json("+serverLatest.number+")をダウンロードしたが、アプリ内の方("+localNumber+")が同じか新しい");
+
                             }
 
                         }

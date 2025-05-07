@@ -46,7 +46,7 @@
 
 ## インストール
 
-1. [`Oki Ferries 2025 Unlimited github.apk`](Oki%20Ferries%202025%20Unlimited%20github.apk)をダウンロードします。
+1. [`Oki Ferries 2025 Unlimited. Reduced Services from June 2025. github.apk`](Oki%20Ferries%202025%20Unlimited.%20Reduced%20Services%20from%20June%202025.%20github.apk)をダウンロードします。
 2.  ダウンロードしたAPKファイルをAndroidデバイスにコピーします。
 3.  Androidデバイス上でAPKファイルを開き、インストールを実行します。
     -   デバイスの設定で不明なアプリのインストールを許可する必要がある場合があります。

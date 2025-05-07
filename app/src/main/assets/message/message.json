@@ -1,6 +1,11 @@
 {
-  "number": 20250417,
+  "number": 20250507,
   "messages": [
+    {
+      "ymd": "2025/5/7",
+      "ja": "【ダイヤ変更】隠岐汽船より、以下の通りダイヤ変更（申請中）がアナウンスされたため、当アプリの時刻表データの更新版を配信いたします。\n\n「慢性的な船員不足の中、(中略) 今年度に入り、当初予定のダイヤ運航が困難となり、やむなく減便運航をせざるを得ない状況となりました。」\nhttps://www.oki-kisen.co.jp/emergency/666\n\nこの発表に伴い、2025年6月以降の隠岐汽船フェリーの通常ダイヤは複数回の減便が予定されており、また、レインボージェットの夏休みダイヤはお盆期間のみに縮小されています。",
+      "en": "【Schedule Change】In response to an announcement from Oki Kisen regarding the following schedule changes (currently under application), we are releasing an updated version of the timetable data in this app.\n\n\"Due to a chronic shortage of crew members, (...) since the beginning of this fiscal year, it has become difficult to operate according to the originally planned schedule, and we are therefore left with no choice but to reduce services.\"\nhttps://www.oki-kisen.co.jp/emergency/666\n\nFollowing this announcement, multiple reductions are planned for the regular Oki Kisen ferry schedule from June 2025 onward, and the Rainbow Jet's summer schedule has been shortened to operate only during the Obon holiday period."
+    },
     {
       "ymd": "2025/4/16",
       "ja": "【お知らせ】アプリの仕様変更について\n\n「Play ストアの開発者アカウント廃止」および「Amazonアプリストアでの配信終了」に伴い、アプリの仕様を以下のとおり変更しました。\n\n・時刻表の更新方式を変更しました\n　従来のアプリ同梱から、ダウンロードによる更新方式に移行しました。今後、アプリの更新は不要になります。\n　アプリ起動時などに自動で更新を確認し、必要に応じて時刻表をダウンロードします。\n\n・アプリストア経由での更新を停止します\n　Play ストアおよび Amazon アプリストアでの更新は今後行いません。\n　新規インストールやアップデートが必要な場合は、GitHub から apk ファイルを手動でダウンロード・インストールしてください。\n",
