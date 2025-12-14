@@ -15,6 +15,7 @@
     <string name="option_menu_share_to_browser">Share to browser</string>
     <string name="option_menu_change_date">Change Date</string>
     <string name="option_menu_ex_filter">Ex Filter</string>
+    <string name="option_menu_switch_date_list">Dates When the Schedule Changes</string>
     <string name="option_menu_font_plus">Font Size Up</string>
     <string name="option_menu_font_minus">Font Size Down</string>
 

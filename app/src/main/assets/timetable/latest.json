@@ -1,7 +1,7 @@
 {
-  "number": "20250507",
-  "descriptionJa": "2025年時刻表、6月～数回減便",
-  "descriptionEn": "2025 Timetable – Reduced Services from June",
+  "number": "20251214",
+  "descriptionJa": "2026年時刻表",
+  "descriptionEn": "Timetable of 2026",
   "fileList": [
     "2019All.json",
     "2020All.json",
@@ -10,6 +10,7 @@
     "2023All.json",
     "2024All.json",
     "2025All.json",
-    "2026All.json"
+    "2026All.json",
+    "2027All.json"
   ]
 }

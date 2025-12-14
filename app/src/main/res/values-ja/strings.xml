@@ -80,6 +80,7 @@
     <string name="option_menu_url">URL編集</string>
     <string name="option_menu_share_to_browser">ブラウザで開く</string>
     <string name="option_menu_ex_filter">Exフィルタ</string>
+    <string name="option_menu_switch_date_list">ダイヤ変更日</string>
     <string name="option_menu_font_plus">大きく</string>
     <string name="option_menu_font_minus">小さく</string>
     <string name="option_menu_notification">アプリお知らせ</string>

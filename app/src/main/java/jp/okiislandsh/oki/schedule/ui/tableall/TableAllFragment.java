@@ -31,7 +31,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.view.MenuProvider;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -51,6 +54,7 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TimeZone;
+import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -61,6 +65,7 @@ import jp.okiislandsh.library.android.MyUtil;
 import jp.okiislandsh.library.android.SizeUtil;
 import jp.okiislandsh.library.android.drawable.BorderDrawable;
 import jp.okiislandsh.library.android.live.LiveDataTask;
+import jp.okiislandsh.library.android.view.ViewBuilderFunction;
 import jp.okiislandsh.library.android.view.live.MultiStateImageButton;
 import jp.okiislandsh.library.core.MathUtil;
 import jp.okiislandsh.library.core.YMDInt;
@@ -375,6 +380,27 @@ public class TableAllFragment extends AbsBaseFragment implements Observer<TIMETA
     }
 
     /**
+     * アセット内の時刻表データに存在する、ダイヤ変更日リスト
+     */
+    private static @NonNull Set<YMDInt> getSwitchDates(@Nullable TimeTableData ttAll) throws Exception {
+
+        final @NonNull Set<YMDInt> switchDateSet = new HashSet<>();
+        if(ttAll==null) return switchDateSet;
+
+        for(TimeTableData.Parts parts: ttAll){
+            try {
+                for (Pair<YMDInt, YMDInt> span : parts.spans) {
+                    switchDateSet.add(span.first);
+                }
+                switchDateSet.addAll(parts.days);
+            }catch (Exception e){
+                Log.e("正常に切り替え初日を取り出せなかった。switchDateList="+switchDateSet, e);
+            }
+        }
+        return switchDateSet;
+    }
+
+    /**
      * アセット内の時刻表データに存在する、年のSet
      */
     private static @NonNull Set<Integer> getContainInfoYears(@Nullable TimeTableData ttAll) throws Exception {
@@ -383,7 +409,7 @@ public class TableAllFragment extends AbsBaseFragment implements Observer<TIMETA
         if(ttAll==null) return yearSet;
 
         for(TimeTableData.Parts parts: ttAll){
-                /*for (Pair<YMDInt, YMDInt> span : parts.spans) {
+                /* for (Pair<YMDInt, YMDInt> span : parts.spans) {
                     yearSet.add(span.first.getYear());
                     yearSet.add(span.second.getYear());
                 }
@@ -459,6 +485,7 @@ public class TableAllFragment extends AbsBaseFragment implements Observer<TIMETA
             }
             @Override
             public void onPrepareMenu(@NonNull Menu menu) {
+                menu.clear();
                 MenuProvider.super.onPrepareMenu(menu); //一応
                 //日付変更
                 with(menu.add(1, R.string.option_menu_change_date, 1, R.string.option_menu_change_date), item->{
@@ -467,7 +494,12 @@ public class TableAllFragment extends AbsBaseFragment implements Observer<TIMETA
                 });
                 //Exフィルタ
                 with(menu.add(1, R.string.option_menu_ex_filter, 1, R.string.option_menu_ex_filter), item->{
-                    item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+                    item.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+                    item.setIcon(R.drawable.icon_ex_filter);
+                });
+                //ダイヤ変更日リスト
+                with(menu.add(1, R.string.option_menu_switch_date_list, 1, R.string.option_menu_switch_date_list), item->{
+                    item.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
                     item.setIcon(R.drawable.icon_ex_filter);
                 });
                 //フォントサイズ + and -
@@ -488,6 +520,9 @@ public class TableAllFragment extends AbsBaseFragment implements Observer<TIMETA
                     return true;
                 }else if (itemId == R.string.option_menu_ex_filter) { //Exフィルタ
                     showExDialog();
+                    return true;
+                }else if (itemId == R.string.option_menu_switch_date_list) { //ダイヤ変更日リスト
+                    showSwitchDateListDialog();
                     return true;
                 }else if (itemId == R.string.option_menu_font_plus) { //フォントサイズ +
                     if(P.setTimeTableFontSizePlus(requireContext())){
@@ -822,6 +857,99 @@ public class TableAllFragment extends AbsBaseFragment implements Observer<TIMETA
         ));
     }
 
+    private void showSwitchDateListDialog(){
+
+        final @Nullable TimeTableData ttAll = liveTTData_getValue();
+
+        if(ttAll==null) {
+            showToastS(isJa("時刻表データが構築されていません。", "The timetable data has not been constructed."));
+            return;
+        }
+
+        //ダイヤ変更日ダイアログ起動
+        final @NonNull Set<YMDInt> switchDateSet;
+        try {
+            switchDateSet = getSwitchDates(ttAll); //時間がかかる可能性があるため、ほんとは非同期にしないといけない
+            if(switchDateSet.isEmpty()) throw new RuntimeException("SwitchDateList is Empty.");
+        } catch (Exception e) {
+            showToastS(isJa("ダイアログ起動に失敗しました。ダイヤ変更日リストの取得に失敗。", "Failed to show dialog. Can not get the switch date list."), e);
+            return;
+        }
+
+        DateSelectionDialogFragment dialog = DateSelectionDialogFragment.newInstance(switchDateSet);
+        dialog.show(getChildFragmentManager(), DateSelectionDialogFragment.class.getSimpleName());
+
+    }
+
+    public static class DateSelectionDialogFragment extends DialogFragment implements ViewBuilderFunction.OnFragment {
+        @Override
+        public @NonNull Fragment getFragment() {
+            return this;
+        }
+
+        private static final String ARG_DATE_LIST = "date_list";
+
+        // Factory Method も static にする
+        public static DateSelectionDialogFragment newInstance(Set<YMDInt> dateSet) {
+            DateSelectionDialogFragment fragment = new DateSelectionDialogFragment();
+            Bundle args = new Bundle();
+            final int[] convert = dateSet.stream()
+                    .mapToInt(YMDInt::intValue)
+                    .toArray();
+            args.putIntArray(ARG_DATE_LIST, convert);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @NonNull
+        @Override
+        public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+            // Staticな内部クラスだが、FragmentのスコープでViewModelを取得
+            final @NonNull TableAllViewModel vm = new ViewModelProvider(requireParentFragment()).get(TableAllViewModel.class);
+
+            //sort機能付きset
+            final @NonNull TreeSet<YMDInt> dateSet = new TreeSet<>(Collections.reverseOrder());
+
+            final @Nullable Bundle arg = getArguments();
+            if(arg==null){
+                showToastL("getArguments() is null");
+            }else{
+                final @Nullable int[] convert = arg.getIntArray(ARG_DATE_LIST);
+                if(convert==null || convert.length==0){
+                    showToastL("ARG_DATE_LIST==null || ARG_DATE_LIST.length==0");
+                }else {
+                    for (int date : convert) {
+                        dateSet.add(new YMDInt(date));
+                    }
+                }
+            }
+
+            //表示用
+            final @NonNull YMDInt[] valueArray = dateSet.toArray(new YMDInt[]{});
+            final @NonNull CharSequence[] labelArray = Arrays.stream(valueArray)
+                    .map(YMDInt::toString)
+                    .toArray(CharSequence[]::new);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity());
+            builder.setTitle(isJa("ダイヤ変更日の一覧", "Dates When the Schedule Changes"))
+                    .setItems(labelArray, (dialog, which) -> {
+                        try {
+                            YMDInt selectedDate = valueArray[which];
+                            // 選択された日付を ViewModel の LiveData に postValue
+                            vm.mDate.postValue(selectedDate.getCalendar());
+                            vm.postTimeTable(TIMETABLE.DATE); //抽出
+                            debugToastS(selectedDate.toString());
+                        } catch (Exception e) {
+                            LogDB.getStringInstance().w("Date Selection Dialog 通知エラー。 which="+which, e);
+                        }
+                        // ダイアログを閉じる
+                        dismiss();
+                    });
+
+            return builder.create();
+        }
+    }
+
     /** 検索設定オブザーバ */
     @Override
     public void onChanged(TIMETABLE timetable) {
@@ -953,7 +1081,7 @@ public class TableAllFragment extends AbsBaseFragment implements Observer<TIMETA
         }
     }
     /** 検索結果オブザーバ */
-    public void onChanged(@NonNull TimeTableFindResult result) {
+    private void onChanged(@NonNull TimeTableFindResult result) {
 
         //クリア
         bind.ttContainer.removeAllViews();

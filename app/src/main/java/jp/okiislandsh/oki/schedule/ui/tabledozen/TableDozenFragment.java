@@ -256,6 +256,7 @@ public class TableDozenFragment extends AbsBaseFragment {
             }
             @Override
             public void onPrepareMenu(@NonNull Menu menu) {
+                menu.clear();
                 MenuProvider.super.onPrepareMenu(menu); //一応
                 //日付変更
                 with(menu.add(1, R.string.option_menu_change_date, 1, R.string.option_menu_change_date), item->{
