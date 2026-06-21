@@ -18,9 +18,6 @@ import jp.okiislandsh.oki.schedule.util.P;
 
 public class WebViewModel extends AndroidViewModel {
 
-    /** ViewModel:URL */
-    public final @NonNull MutableNonNullLiveData<String> mUrl;
-
     public final @NonNull LiveData<MessageData> mMessage = MyApp.newLiveMessageData();
 
     public final @NonNull MutableLiveData<Void> mInvalidateOptionMenuNotifier = new MutableLiveData<>();
@@ -30,7 +27,6 @@ public class WebViewModel extends AndroidViewModel {
     public WebViewModel(@NonNull Application application, @NonNull SavedStateHandle state) {
         super(application);
 
-        mUrl = new MutableNonNullLiveData<>(nvl(state.get("mUrl"), application.getString(R.string.url_okikisen)));
         mLastReadMessageNumber = P.LAST_READ_MESSAGE_NUMBER.getLive(application);
 
     }

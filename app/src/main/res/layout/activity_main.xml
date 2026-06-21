@@ -30,32 +30,15 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <!-- コンテンツ部 -->
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!-- フラグメントを切り替えるコンテナ、メニュー操作で切り替える -->
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-            <!-- フラグメントを切り替えるコンテナ、メニュー操作で切り替える -->
-            <fragment
-                android:id="@+id/nav_host_fragment"
-                android:name="androidx.navigation.fragment.NavHostFragment"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:defaultNavHost="true"
-                app:layout_constraintBottom_toTopOf="@id/adContainer"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:navGraph="@navigation/mobile_navigation" />
-
-            <FrameLayout
-                android:id="@+id/adContainer"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/nav_host_fragment" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/mobile_navigation"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -74,6 +74,7 @@
     <string name="guide_naikousen_7">[船内の過ごし方]\n天気の良い日はデッキへ出て潮風を浴びるのもいいでしょう。年に一回程度、航行中にイルカが見えることもあります。</string>
     <string name="guide_naikousen_8">さあ次の島が見えてきました！</string>
     <string name="menu_menseki">免責</string>
+    <string name="preference_last_notice_check">お知らせ更新確認</string>
     <string name="menseki">このアプリを利用する場合、以下の免責事項へ同意したものとします。\n同意できない場合、直ちにアンインストールしてください。\n\n●このアプリの利用により、何らかのトラブル、損失、損害等が発生しても、開発者は一切の責任を負いません。\n\n●情報の正確性について、開発者は一切の保証を致しません。当アプリによらない方法で公式情報をご確認ください。</string>
 
     <string name="option_menu_change_date">日付変更</string>
@@ -84,5 +85,7 @@
     <string name="option_menu_font_plus">大きく</string>
     <string name="option_menu_font_minus">小さく</string>
     <string name="option_menu_notification">アプリお知らせ</string>
+    <string name="SSLErrorPageHTML"><![CDATA[<html><body style=\'text-align:center; padding-top:20%; font-family:sans-serif; color:#333;\'><h3>🔒 接続を中止しました</h3><p>安全な接続が確認できないため、ページの表示を中止しました。</p></body></html>]]></string>
+    <string name="preference_last_timetable_check">時刻表データ更新確認</string>
 
 </resources>

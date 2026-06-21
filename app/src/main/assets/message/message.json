@@ -1,6 +1,11 @@
 {
-  "number": 20251214,
+  "number": 20260621,
   "messages": [
+    {
+      "ymd": "2026/6/21",
+      "ja": "【ダイヤ変更】隠岐汽船より、以下の通りダイヤ変更（申請中）がアナウンスされたため、当アプリの時刻表データの更新版を配信します。\n\n「本年3月からフェリー3隻、高速船1隻体制での運航に努めてまいりましたが、更なる退職者とその喫緊での補充が困難となり、やむなく更なる減便運航をせざるを得ない状況となりました。」\nhttps://www.oki-kisen.co.jp/emergency/667\n\nこの発表に伴い、2026年7月以降の年内の隠岐汽船フェリーのダイヤは、お盆を除きフェリー2隻による冬期ダイヤでの運航となります。\n\nアプリ変更点\n・同梱時刻表データおよび配信時刻表データを更新しました。\n・Android 17（TargetSDK 37）への対応を行いました。\n・最小バージョンをAndroid 5.1（minSdk 22）からAndroid 8.0（minSdk 26）へ引き上げました。\n・Android 7.1.2以下の端末ではアプリの更新ができなくなりますが、引き続き最新時刻表データは配信されます。\n・軽微なバグの修正を行いました。\n\n最新版のアプリはGithubプロジェクトへ\nhttps://github.com/okiislandsh/OkiFerries\n注意：apkファイルをダウンロードして手動インストールが必要です",
+      "en": "[Timetable Change]\nOki Kisen has announced the following timetable change (currently under application review). As a result, we are releasing an updated version of the timetable data in this app.\n\n“Since March this year, we have been operating with a fleet of three ferries and one high-speed vessel. However, due to additional staff resignations and difficulties in securing replacements on short notice, we have been forced to further reduce services.”\nhttps://www.oki-kisen.co.jp/emergency/667\nIn response to this announcement, from July 2026 onward for the remainder of the year, Oki Kisen ferry services will operate under the winter timetable with two vessels, except during the Obon holiday period.\n\nApp Changes\n\nUpdated bundled timetable data and downloadable timetable data.\n\nAdded support for Android 17 (Target SDK 37).\n\nIncreased the minimum supported version from Android 5.1 (minSdk 22) to Android 8.0 (minSdk 26).\n\nDevices running Android 7.1.2 or lower will no longer be able to update the app.\nHowever, the latest timetable data will continue to be automatically downloaded and made available.\n\nFixed minor bugs.\n\nThe latest version of the app is available on the GitHub project:\nhttps://github.com/xxxxxx\n\nNote: You need to download the APK file and install it manually."
+    },
     {
       "ymd": "2025/12/14",
       "ja": "【2026年 時刻表】隠岐汽船および隠岐観光より、2026年の時刻表が公開されたため、当アプリの時刻表データの更新版を配信します。\n\nインターネットに接続できる状態で当アプリを起動すると、数日間隔で時刻表データの更新を確認し、必要があれば自動でダウンロードを行っています。\n\n設定画面で時刻表データの更新状況を確認できます。",

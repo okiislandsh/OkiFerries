@@ -40,7 +40,7 @@ public class WebSettingsDialogFragment extends DialogFragment implements ViewBui
 
         bind.buttonContainer.setBackground(new BorderDrawable(0x44FFFFFF & getColorFromAttr(android.R.attr.colorPrimary), BorderDrawable.BORDER.TOP));
 
-        //Cancelボタン
+        //Cancel ボタン
         bind.buttonContainer.addView(with(newButton(jp.okiislandsh.library.android.R.string.close, newParams0W(1f), v -> dismiss()), button ->{
             button.setAllCaps(false);
             button.setBackground(newPressColorDrawable());
@@ -74,10 +74,11 @@ public class WebSettingsDialogFragment extends DialogFragment implements ViewBui
             setPreferenceScreen(with(
                     getPreferenceManager().createPreferenceScreen(requireContext()),
                     screen->{
+                        final @NonNull CharSequence label = newSizeSpan("Edit", .8f);
                         final @NonNull Function.voidNonNull<TYPE> f = type-> {
                             final @NonNull String title = type.name();
                             screen.addPreference(new ButtonPreference(
-                                    requireContext(), title, () -> title, null, ()->"Edit", () -> true,
+                                    requireContext(), title, () -> newSizeSpan(title, .8f), null, ()->label, () -> true,
                                     (that, button) -> showURLSettingEditDialog(requireContext(), title, type)
                             ));
                         };
@@ -107,8 +108,15 @@ public class WebSettingsDialogFragment extends DialogFragment implements ViewBui
             final @NonNull Button urlSaveButton = newTextStyleButton("URL Save", newParamsWW(0f), v -> {
                 try {
                     final @NonNull String input = urlEdit.getText().toString().trim();
-                    P.URL_SETTINGS.setURL(context, type, input.isEmpty() ? null : input);
-                    showToastS("Saved");
+                    if(input.isEmpty()) {
+                        P.URL_SETTINGS.setURL(context, type, null); //未入力ならクリア
+                        showToastL("Clear URL");
+                    }if(P.isValidAndSecureUrl(input)) {
+                        P.URL_SETTINGS.setURL(context, type, input); //バリデーションを通れば保存
+                        showToastS("Saved");
+                    }else{
+                        showToastL(isJa("不正なURL", "Invalid URL"));
+                    }
                 } catch (Exception e) {
                     showToastL("Error", e);
                 }

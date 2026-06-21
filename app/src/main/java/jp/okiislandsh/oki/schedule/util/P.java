@@ -6,6 +6,7 @@ import static jp.okiislandsh.library.core.MyUtil.isJa;
 import static jp.okiislandsh.library.core.MyUtil.requireNonNull;
 
 import android.content.Context;
+import android.webkit.URLUtil;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,10 +44,10 @@ public class P {
             false, (c, p) -> "デバッグモード", (c, p) -> p.get(c) ? "ON": "OFF");
 
     /** TimeTableDownloadTaskManagerのサーバアクセス実行時刻 */
-    public static final @NonNull ILongPreference.INonNull LAST_SERVER_ACCESS_TIME_MILLIS_FOR_TIME_TABLE = ILongPreference.newNonNull("LAST_SERVER_ACCESS_TIME_MILLIS_FOR_TIME_TABLE", Long.MIN_VALUE, 0, Long.MAX_VALUE, (c, p) -> "時刻表データ 更新確認", (c, p) -> DateUtil.toEasyString(p.get(c)));
+    public static final @NonNull ILongPreference.INonNull LAST_SERVER_ACCESS_TIME_MILLIS_FOR_TIME_TABLE = ILongPreference.newNonNull("LAST_SERVER_ACCESS_TIME_MILLIS_FOR_TIME_TABLE", Long.MIN_VALUE, 0, Long.MAX_VALUE, (c, p) -> c.getString(R.string.preference_last_timetable_check), (c, p) -> DateUtil.toEasyString(p.get(c)));
 
     /** MessageDownloadTaskManagerのサーバアクセス実行時刻 */
-    public static final @NonNull ILongPreference.INonNull LAST_SERVER_ACCESS_TIME_MILLIS_FOR_MESSAGE = ILongPreference.newNonNull("LAST_SERVER_ACCESS_TIME_MILLIS_FOR_MESSAGE", Long.MIN_VALUE, 0, Long.MAX_VALUE, (c, p) -> "お知らせ 更新確認", (c, p) -> DateUtil.toEasyString(p.get(c)));
+    public static final @NonNull ILongPreference.INonNull LAST_SERVER_ACCESS_TIME_MILLIS_FOR_MESSAGE = ILongPreference.newNonNull("LAST_SERVER_ACCESS_TIME_MILLIS_FOR_MESSAGE", Long.MIN_VALUE, 0, Long.MAX_VALUE, (c, p) -> c.getString(R.string.preference_last_notice_check), (c, p) -> DateUtil.toEasyString(p.get(c)));
 
     /** お知らせの表示済みタイムスタンプ */
     public static final @NonNull ILongPreference.INonNull LAST_READ_MESSAGE_NUMBER = ILongPreference.newNonNull("LAST_READ_MESSAGE_NUMBER", Long.MIN_VALUE, Long.MIN_VALUE, Long.MAX_VALUE, (c, p) -> "お知らせの表示済みnumber", (c, p) -> "number:"+p.get(c));
@@ -100,7 +101,7 @@ public class P {
         public @Nullable String getLabel(@NonNull Context context, @NonNull TYPE type){
             return getString(context, type, KEY_LABEL);
         }
-        /** JSONを部部編集して保存。値がnullの時 削除する。 */
+        /** JSONを部分編集して保存。値がnullの時 削除する。 */
         public void setURLAndLabel(@NonNull Context context, @NonNull TYPE type, @Nullable JSONObject jsonObject) throws Exception {
             final @NonNull JSONObject root = get(context); //保存に必要
             if(jsonObject==null){ //削除
@@ -110,15 +111,15 @@ public class P {
             }
             set(context, root);
         }
-        /** JSONを部部編集して保存。値がnullの時 削除する。 */
+        /** JSONを部分編集して保存。値がnullの時 削除する。 */
         public void setURL(@NonNull Context context, @NonNull TYPE type, @Nullable String url) throws Exception {
             edit(context, type, KEY_URL, url);
         }
-        /** JSONを部部編集して保存。値がnullの時 削除する。 */
+        /** JSONを部分編集して保存。値がnullの時 削除する。 */
         public void setLabel(@NonNull Context context, @NonNull TYPE type, @Nullable String label) throws Exception {
             edit(context, type, KEY_LABEL, label);
         }
-        /** JSONを部部編集して保存。値がnullの時 削除する。 */
+        /** JSONを部分編集して保存。値がnullの時 削除する。 */
         public void edit(@NonNull Context context, @NonNull TYPE type, @NonNull String key, @Nullable String value) throws Exception {
             final @NonNull JSONObject root = get(context); //保存に必要
             final @NonNull JSONObject editObject;
@@ -322,9 +323,9 @@ public class P {
             case "jp.okiislandsh.oki.schedule":
                 return isJa("Google PlayStore向け", "for Google PlayStore");
             case "jp.okiislandsh.oki.schedule.debug":
-                return "Debugビルド";
+                return isJa("Debug ビルド", "Debug Build");
             default:
-                return "Unknownビルド "+packageName;
+                return isJa("Unknown ビルド ", "Unknown Build ")+packageName;
         }
     }
 
@@ -387,6 +388,35 @@ public class P {
     /** 島前時刻表の車両設定を反転させる */
     public static void setReverseCarOnly(@NonNull Context context){
         CAR_ONLY.set(context, !CAR_ONLY.get(context));
+    }
+
+    /**
+     * 入力された文字列が安全かつ有効なURL形式であるかを判定します。
+     * * @param input ユーザーが入力した生の文字列
+     * @return 安全で読み込み可能なURLである場合は true、それ以外は false
+     */
+    public static boolean isValidAndSecureUrl(@Nullable String input) {
+        if (input == null) {
+            return false;
+        }
+
+        String trimmed = input.trim();
+
+        // 1. 強力なセキュリティチェック: javascript: スキームは絶対に遮断
+        if (trimmed.toLowerCase().startsWith("javascript:")) {
+            return false;
+        }
+
+        // 2. プロトコルの補完をシミュレートして形式チェック
+        String urlToValidate;
+        if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+            urlToValidate = trimmed;
+        } else {
+            urlToValidate = "https://" + trimmed;
+        }
+
+        // 3. Android標準のURL構造チェック
+        return URLUtil.isValidUrl(urlToValidate);
     }
 
 }

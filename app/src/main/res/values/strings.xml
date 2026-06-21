@@ -75,6 +75,9 @@
 
     <string name="preference_text_size_title">Time Table Text Size</string>
     <string name="preference_theme_title">Time Table Color Theme</string>
+    <string name="preference_last_timetable_check">Last Timetable Check</string>
+    <string name="preference_last_notice_check">Last Notice Check</string>
 
     <string name="menseki">IF YOU USE THIS APP,\nYOU AGREE TO THE FOLLOWING DISCLAIMER.\nIF YOU DO NOT AGREE, UNINSTALL IT IMMEDIATELY.\n\nFOR THE USE OF THIS APP,\nIN THE EVENT OF TROUBLE, LOSS, DAMAGE, ETC.,\nDEVELOPERS ARE NOT RESPONSIBLE.\n\nFOR INFORMATION ACCURACY, SEE\nTHE DEVELOPER DOES NOT MAKE ANY GUARANTEES.\nCHECK THE OFFICIAL INFORMATION IN A WAY THAT IS\nINDEPENDENT OF THIS APP.</string>
+    <string name="SSLErrorPageHTML"><![CDATA[<html><body style=\'text-align:center; padding-top:20%; font-family:sans-serif; color:#333;\'><h3>🔒 Connection Aborted</h3><p>The page failed to load because a secure connection could not be established.</p></body></html>]]></string>
 </resources>

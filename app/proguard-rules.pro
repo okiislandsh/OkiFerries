@@ -15,12 +15,3 @@
 -keep class * extends androidx.fragment.app.Fragment{}
 #noinspection ShrinkerUnresolvedReference
 -keep class androidx.navigation.** {*;}
-
-
-# OkHttp
--dontwarn okhttp3.**
--keep class okhttp3.** { *; }
--keep interface okhttp3.** { *; }
--dontwarn okio.**
--keep class okio.** { *; }
--keep interface okio.** { *; }
