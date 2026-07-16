@@ -10,8 +10,8 @@ android {
         minSdk 26
         targetSdk 37
 
-        versionCode 24
-        versionName "2026 Unlimited. Timetable Change Jun 2026." //2バイト文字非対応
+        versionCode 25
+        versionName "2026 Unlimited. Timetable Change Jul 2026." //2バイト文字非対応
 
         buildFeatures.buildConfig = true //VersionNameLabelとかで使ってる
 

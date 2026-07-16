@@ -49,7 +49,7 @@ This app is especially designed for local residents (notably Chibu, Ama, Nishino
 
 ## Installation
 
-1. Download the [`Oki Ferries 2026 Unlimited. Timetable Change Jun 2026. github.apk`](Oki%20Ferries%202026%20Unlimited.%20Timetable%20Change%20Jun%202026.%20github.apk).
+1. Download the [`Oki Ferries 2026 Unlimited. Timetable Change Jul 2026. github.apk`](Oki%20Ferries%202026%20Unlimited.%20Timetable%20Change%20Jul%202026.%20github.apk).
 2.  Copy the downloaded APK file to your Android device.
 3.  Open the APK file on your Android device and perform the installation.
     -   You may need to allow the installation of apps from unknown sources in your device's settings.

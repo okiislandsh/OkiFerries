@@ -46,7 +46,7 @@
 
 ## インストール
 
-1. [`Oki Ferries 2026 Unlimited. Timetable Change Jun 2026. github.apk`](Oki%20Ferries%202026%20Unlimited.%20Timetable%20Change%20Jun%202026.%20github.apk)をダウンロードします。
+1. [`Oki Ferries 2026 Unlimited. Timetable Change Jul 2026. github.apk`](Oki%20Ferries%202026%20Unlimited.%20Timetable%20Change%20Jul%202026.%20github.apk)をダウンロードします。
 2.  ダウンロードしたAPKファイルをAndroidデバイスにコピーします。
 3.  Androidデバイス上でAPKファイルを開き、インストールを実行します。
     -   デバイスの設定で不明なアプリのインストールを許可する必要がある場合があります。
