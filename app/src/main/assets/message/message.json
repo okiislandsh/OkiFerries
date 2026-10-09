@@ -1,6 +1,11 @@
 {
-  "number": 20260716,
+  "number": 20261009,
   "messages": [
+    {
+      "ymd": "2026/10/9",
+      "ja": "【ダイヤ変更】隠岐観光より、10月改定版の内航船のダイヤが発表されたため、当アプリの時刻表データの更新版を配信します。\n\nアプリ内の時刻表データは96時間以内に自動で更新されます。\nただし、ダイヤ変更が10月10日からとなっており、アプリ起動のタイミングによっては古い内航船時刻表が表示される場合があります。\n\n[ドロワーメニュー] - [アプリ設定] - [時刻表データ 更新確認]にダウンロード済みの時刻表データのバージョンが表示されます。\nバージョンが「20261009」より古い場合は、［更新確認］ボタンを押して時刻表データを更新してください。\n\nアプリ変更点\n・同梱時刻表データおよび配信時刻表データを更新しました。\n\n\n(※アプリ本体の更新は任意です。アップデートを行わなくても、時刻表データは自動的に更新されます)\n最新版のアプリはGithubプロジェクトへ\nhttps://github.com/okiislandsh/OkiFerries\n注意：apkファイルをダウンロードして手動インストールが必要です。",
+      "en": "[Timetable Change]\n\nOki Kanko has announced an updated timetable for inter-island ferry services starting in October. As a result, we are releasing updated timetable data in this app.\n\nThe timetable data in the app will be updated automatically within 96 hours.\nHowever, since the new timetable takes effect on October 10th, the app may temporarily display the previous inter-island ferry timetable depending on when the app is launched.\n\nYou can check the version of the downloaded timetable data by navigating to [Drawer Menu] - [App Settings] - [Last Timetable Check].\nIf the version is older than \"20261009\", please tap the [Check Updates] button to update the timetable data.\n\n\nApp Changes\n\nUpdated bundled timetable data and downloadable timetable data.\n\n\n(Updating the app itself is optional. The timetable data will update automatically even if you do not update the app.)\n\nThe latest version of the app is available on the GitHub project:\nhttps://github.com/okiislandsh/OkiFerries\n\nNote: You need to download the APK file and install it manually."
+    },
     {
       "ymd": "2026/7/16",
       "ja": "【ダイヤ変更】隠岐観光より、隠岐汽船フェリーのダイヤ変更に伴う内航船のダイヤ変更が発表されたため、当アプリの時刻表データの更新版を配信します。\n\nアプリ内の時刻表データは96時間以内に自動で更新されます。\nただし、ダイヤ変更が7月17日からとなっており、アプリ起動のタイミングによっては古い内航船時刻表が表示される場合があります。\n\n[ドロワーメニュー] - [アプリ設定] - [時刻表データ 更新確認]にダウンロード済みの時刻表データのバージョンが表示されます。\nバージョンが「20260716」より古い場合は、［更新確認］ボタンを押して時刻表データを更新してください。\n\nアプリ変更点\n・同梱時刻表データおよび配信時刻表データを更新しました。\n\n\n(※アプリ本体の更新は任意です。アップデートを行わなくても、時刻表データは自動的に更新されます)\n最新版のアプリはGithubプロジェクトへ\nhttps://github.com/okiislandsh/OkiFerries\n注意：apkファイルをダウンロードして手動インストールが必要です。",
